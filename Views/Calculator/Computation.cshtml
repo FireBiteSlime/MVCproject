@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model string[]
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Калькулятор</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    @Html.Partial("_Menu")
+    <h3>Калькулятор двух чисел</h3>
+    @using (Html.BeginForm("Calculate", "Calculator"))
+    {
+        <label>Система счисления:</label>
+        <input type="number" min="2" max="36" name="base_num" value="@Model[0]" /><br />
+        <p>Команды: *, /, +, -, %, ^, root, log, xor, concat. Примеры: 3 * 5, 2 log 4, 3 root 9, 101 xor 111.</p>
+        <input type="text" name="operations" size="50" /><input type="submit" value="решить" />
+    }
+    @{
+        if (Model.Length > 1)
+
+        {
+            if (Model[1] == "error")
+            {
+                <p>Ошибка: @Model[2]</p>
+            }
+            else
+            {
+               <p>@Model[1] @Model[2] @Model[3] = @Model[4]</p>
+            }
+        }
+    }
+</body>
+</html>

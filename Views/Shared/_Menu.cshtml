@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<style>
+    .logo {
+        border-style: solid;
+        border-width: 1px;
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: #0000FF;
+        -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+        transition: width 2s, height 2s, background-color 2s, transform 2s;
+        text-shadow: 1px 1px 2px black, 0 0 1em red;
+        color:blueviolet;
+    }
+
+    .logo:hover {
+        background-color: #FFCCCC;
+        width: 200px;
+        height: 200px;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    li {
+        display: inline;
+        border: 1px solid black;
+        padding: 3px;
+    }
+</style>
+
+<h1 class="logo">Ъ!Калькулятор</h1>
+
+<ul style="display: inline;">
+   <li>@Html.ActionLink("Главная", "Show", "Index")</li>
+   <li>@Html.ActionLink("Калькулятор", "Computation", "Calculator")</li>
+   <li>@Html.ActionLink("Лаб. 1 №1", "Show", "Lab")</li>
+</ul>
+
+<hr />
+
